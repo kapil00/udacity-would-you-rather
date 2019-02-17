@@ -1,12 +1,12 @@
 import React, {Component, Fragment} from 'react';
-import {BrowserRouter as Router, Route, Switch, withRouter} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import {connect} from 'react-redux';
 import HomePage from './HomePage';
-import QuestionAdd from './QuestionAdd';
-import QuestionPoll from './QuestionPoll';
-import QuestionPollResults from './QuestionPollResults';
-import LeaderBoard from './LeaderBoard';
+import DisplayQuestion from './DisplayQuestion';
+import AddQuestion from './AddQuestion';
+import Leaderboard from './Leaderboard';
 import Nav from './Nav';
+import NotFound from './NotFound';
 import LoadingBar from 'react-redux-loading';
 import {handleInitialData} from "../actions/shared";
 
@@ -21,16 +21,13 @@ class App extends Component {
                     <LoadingBar />
                     <Nav />
                     <div>
-                        {this.props.loading === true
-                            ? null
-                            : <div>
-								<Route path='/' exact component={HomePage} />
-								<Route path='/question/:id' exact component={QuestionPoll}/>
-								<Route path='/question/:id/results' exact component={QuestionPollResults}/>
-								<Route path='/addquestion' exact component={QuestionAdd}/>
-								<Route path='/leaderboard' exact component={LeaderBoard}/>
-                            </div>
-                        }
+                       <Switch>
+                         <Route exact path='/' component={HomePage} />
+                         <Route path='/add' component={AddQuestion} />
+                         <Route path='/questions/:id' exact component={DisplayQuestion} />
+                         <Route path='/leaderboard' exact component={Leaderboard} />
+                         <Route component={NotFound} />
+                       </Switch>
                     </div>
                 </Fragment>
             </Router>
@@ -38,9 +35,9 @@ class App extends Component {
     }
 }
 
-function mapStateToProps({login}) {
+function mapStateToProps({ authedUser }) {
     return {
-        loading: false
+        loading: authedUser.loggedInUser === null
     }
 }
 

@@ -1,3 +1,16 @@
+The components:
+App.js
+--Nav.js
+--HomePage.js
+  --LoginForm.js
+  --QuestionList.js
+    --Question.js
+    --DisplayQuestion.js
+--AddQuestion.js
+--LeaderBoard.js
+--NotFound.js
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -14,3 +14,15 @@ export function getInitialData () {
     questions,
   }))
 }
+
+export function getUsers(id) {
+   return _getUsers();
+}
+export function saveQuestionAnswer (info) {
+    return _saveQuestionAnswer(info);
+}
+
+export function saveQuestion (info) {
+    return _saveQuestion(info);
+}
+
