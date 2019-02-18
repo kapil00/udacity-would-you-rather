@@ -60,17 +60,14 @@ class DisplayQuestion extends Component {
                       <form onSubmit={(e) => this.handleSubmit(e, question.id)}>
                           <p className='left'><strong>Would you rather:</strong></p>
                           <div className="form-check">
-                              <input className="form-check-input" type="radio" name="questionPoll" id="optionOne" value="optionOne" onChange={this.handleInputChange}/>
-                              <label className="form-check-label" htmlFor="optionOne">{question.optionOne.text}</label>
+                              <input className="form-check-input" type="radio" name="questionPoll" id="optionOne" value="optionOne" onChange={this.handleInputChange}/>{question.optionOne.text}
                           </div>
                           <div className="form-check">
-                              <input className="form-check-input" type="radio" name="questionPoll" id="optionTwo" value="optionTwo" onChange={this.handleInputChange}/>
-                              <label className="form-check-label" htmlFor="exampleRadios2"> {question.optionTwo.text}</label>
+                              <input className="form-check-input" type="radio" name="questionPoll" id="optionTwo" value="optionTwo" onChange={this.handleInputChange}/>{question.optionTwo.text}
                           </div>
                           <button className='btn btn-outline-primary reset-vertical-margin' type='submit' disabled={selectedOption === ''}> Submit </button>
                       </form>
               )}
-
 
               {hasAnswered && (
                 <div className='col-sm-12 '>
