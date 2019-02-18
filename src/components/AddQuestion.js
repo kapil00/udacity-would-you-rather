@@ -40,11 +40,21 @@ class AddQuestion extends Component {
 
   render() {
     const { optionOneText, optionTwoText, toHome } = this.state;
-    const {loggedInUser} = this.props;
+    const {loggedInUser, location} = this.props;
 
-    if(!loggedInUser || toHome === true) {
-      return <Redirect to='/' />
+    if(!loggedInUser) {
+      return <Redirect to={{
+               pathname: "/",
+               state: { referrer: location.pathname }
+               }}/>
     }
+
+    if(toHome === true) {
+      return <Redirect to={{
+               pathname: "/"
+               }}/>
+    }
+
     return (
         <div className='container'>
             <div className='row justify-content-center col-sm-8 card'>

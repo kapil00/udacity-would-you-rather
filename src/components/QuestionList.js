@@ -29,7 +29,9 @@ class QuestionList extends Component {
       const {currentTab} = this.state;
       const {questions, loggedInUser} = this.props;
 
-      let questionsToShow = Object.values(questions).filter((question) => this.showQuestionForCurrentTab(question, currentTab, loggedInUser));
+      let questionsToShow = Object.values(questions).filter(
+        (question) => this.showQuestionForCurrentTab(question, currentTab, loggedInUser))
+        .sort((a, b) => b.timestamp - a.timestamp);
 
       return (
         <div className='container'>

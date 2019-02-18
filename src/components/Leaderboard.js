@@ -5,7 +5,10 @@ import {Redirect} from "react-router-dom";
 const Leaderboard = (props) => {
     const { users, loggedInUser } = props;
     if(!loggedInUser) {
-      return <Redirect to='/' />
+      return <Redirect to={{
+               pathname: "/",
+               state: { referrer: props.location.pathname }
+               }}/>
     }
 
     const usersInfo = Object.values(users).map((aUser) => {
@@ -53,7 +56,7 @@ const Leaderboard = (props) => {
 function mapStateToProps({authedUser, users}) {
     return {
         loggedInUser : authedUser.loggedInUser,
-        users
+        users,
     }
 }
 

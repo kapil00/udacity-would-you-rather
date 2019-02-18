@@ -32,12 +32,25 @@ class DisplayQuestion extends Component {
 
   
   render() {
-    const {loggedInUser} = this.props;
+    const {loggedInUser, location} = this.props;
     if(!loggedInUser) {
-      return <Redirect to='/' />
+        return <Redirect to={{
+          pathname: "/",
+          state: { referrer: location.pathname }
+        }}/>
+
     }
 
     const {question, askingUser} = this.props;
+
+    if(!question) {
+        return <Redirect to={{
+          pathname: "/invalid"
+        }}/>
+
+    }
+
+
     const {selectedOption} = this.state;
 
     const hasAnswered = includes(question.optionOne.votes, loggedInUser.id) || includes(question.optionTwo.votes, loggedInUser.id)
@@ -101,7 +114,7 @@ function mapStateToProps({authedUser, questions, users}, props) {
   const {id} = props.match.params;
   const question = questions[id];
   let askingUser = null;
-  if(authedUser.loggedInUser) {
+  if(authedUser.loggedInUser && question) {
     askingUser = users[question.author];
   }
 

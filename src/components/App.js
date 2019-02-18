@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import HomePage from './HomePage';
 import DisplayQuestion from './DisplayQuestion';
@@ -22,10 +22,11 @@ class App extends Component {
                     <Nav />
                     <div>
                        <Switch>
-                         <Route exact path='/' component={HomePage} />
-                         <Route path='/add' component={AddQuestion} />
-                         <Route path='/questions/:id' exact component={DisplayQuestion} />
-                         <Route path='/leaderboard' exact component={Leaderboard} />
+                         <Route exact path='/' component={withRouter(HomePage)} />
+                         <Route path='/add' component={withRouter(AddQuestion)} />
+                         <Route path='/questions/:id' exact component={withRouter(DisplayQuestion)} />
+                         <Route path='/leaderboard' exact component={withRouter(Leaderboard)} />
+                         <Route path='/invalid'component={NotFound} />
                          <Route component={NotFound} />
                        </Switch>
                     </div>
