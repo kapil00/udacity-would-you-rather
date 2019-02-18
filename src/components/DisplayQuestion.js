@@ -53,7 +53,7 @@ class DisplayQuestion extends Component {
 
           <div className='row justify-content-center'>
               <div className='col-sm-4 border-right center'>
-                  <img src={askingUser.avatarURL} alt={`Avatar of ${askingUser.name}`} Style="height:100px"/>
+                  <img src={askingUser.avatarURL} alt={`Avatar of ${askingUser.name}`} className='height-100'/>
               </div>
               <div className='col-sm-8 question-info'>
               {!hasAnswered && (

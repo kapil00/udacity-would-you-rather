@@ -17,14 +17,14 @@ const Leaderboard = (props) => {
 
     return (
         <div className='container'>
-            {usersInfo.map((userInfo) => {
+              {usersInfo.map((userInfo) => {
                 return (
-                        <div className='card'>
+                        <div className='card' key={userInfo.user.id}>
                             <div className='card-header'><strong>{userInfo.user.name}</strong></div>
                             <div className='card-body'>
                                     <div className='row justify-content-center'>
                                         <div className='col-sm-4 border-right center'>
-                                            <img src={userInfo.user.avatarURL} alt={`Avatar of ${userInfo.user.name}`} Style="height:100px"/>
+                                            <img src={userInfo.user.avatarURL} alt={`Avatar of ${userInfo.user.name}`} className='height-100'/>
                                         </div>
                                         <div className='col-sm-5 border-right'>
                                             <p className='m-30-top'><strong><span className='p-5-right'>Answered Questions:</span></strong>

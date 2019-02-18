@@ -7,6 +7,7 @@ import reducer from './reducers'
 import middleware from './middleware'
 
 import 'bootstrap/dist/css/bootstrap.css';
+import './index.css';
 
 const store = createStore(reducer, middleware)
 

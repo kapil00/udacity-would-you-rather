@@ -21,7 +21,7 @@ class Nav extends Component {
               <NavLink to='/' exact activeClassName='active' className="nav-item nav-link">Home</NavLink>
               <NavLink to='/add' exact activeClassName='active' className="nav-item nav-link">New Question</NavLink>
               <NavLink to='/leaderboard' exact activeClassName='active' className="nav-item nav-link">Leaderboard</NavLink>
-              <span Style="margin-left:100px;margin-right:25px" className="navbar-text text-info">Hello,  {loggedInUser.name}</span>
+              <span className="navbar-text text-info name-margin">Hello,  {loggedInUser.name}</span>
               <button type='button' className="btn-sm btn-info" onClick={(e) => this.performLogout(e)}>Logout</button>
             </ul>
           </div>

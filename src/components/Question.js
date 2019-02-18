@@ -12,7 +12,7 @@ const {question, askingUser} = props;
         <div className='card-header'><strong>{askingUser.name} asks:</strong></div>
         <div className='card-body row'>
             <div className='col-sm-4 border-right center'>
-                <img src={askingUser.avatarURL} alt={`Avatar of ${askingUser.name}`} className='avatar' Style="height:100px"/>
+                <img src={askingUser.avatarURL} alt={`Avatar of ${askingUser.name}`} className='height-100'/>
             </div>
             <div className='col-sm-8'>
                 <div className='question-info'>
