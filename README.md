@@ -1,13 +1,23 @@
 The components:
+
 App.js
+
 --Nav.js
+
 --HomePage.js
+
   --LoginForm.js
+
   --QuestionList.js
+  
     --Question.js
+    
     --DisplayQuestion.js
+    
 --AddQuestion.js
+
 --LeaderBoard.js
+
 --NotFound.js
 
 
