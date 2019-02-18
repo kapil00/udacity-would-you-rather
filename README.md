@@ -1,4 +1,5 @@
-<strong>The components: <strong>
+The components:
+
 App.js
 --Nav.js
 --HomePage.js
