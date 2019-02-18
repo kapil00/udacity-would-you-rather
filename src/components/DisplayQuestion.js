@@ -51,7 +51,7 @@ class DisplayQuestion extends Component {
           <div className='margin-top-10 card'>
             <div className='card-header'><strong>{askingUser.name} asks: </strong></div>
 
-          <div className='row justify-content-center'>
+          <div className='card-body row'>
               <div className='col-sm-4 border-right center'>
                   <img src={askingUser.avatarURL} alt={`Avatar of ${askingUser.name}`} className='height-100'/>
               </div>

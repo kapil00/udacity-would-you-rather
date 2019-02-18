@@ -31,7 +31,7 @@ const Leaderboard = (props) => {
                                                 <span className='badge badge-secondary'>{Object.keys(userInfo.user.answers).length}</span>
                                             </p>
                                             <p><span className='p-5-right'><strong>Created Questions:</strong></span>
-                                                <span className='badge badge-secondary'>{Object.keys(userInfo.user.questions).length}</span>
+                                                <span className='badge badge-secondary'>{Object.keys(	userInfo.user.questions).length}</span>
                                             </p>
                                         </div>
                                         <div className='col-sm-3 m-35-top'>
