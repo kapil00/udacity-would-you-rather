@@ -100,7 +100,10 @@ class DisplayQuestion extends Component {
 function mapStateToProps({authedUser, questions, users}, props) {
   const {id} = props.match.params;
   const question = questions[id];
-  const askingUser = users[question.author];
+  let askingUser = null;
+  if(authedUser.loggedInUser) {
+    askingUser = users[question.author];
+  }
 
    return {
      question: question,
